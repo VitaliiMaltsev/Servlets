@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * Сервлет для демонстрации работы с параметрами в web.xml
  * @author ASaburov
  */
-public class ParamServlet extends HttpServlet {
+public class InitParamServlet extends HttpServlet {
 
     String param1;
     String param2;
@@ -39,10 +39,10 @@ public class ParamServlet extends HttpServlet {
         try {
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ParamServlet</title>");
+            out.println("<title>Servlet InitParamServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ParamServlet</h1>");
+            out.println("<h1>Servlet InitParamServlet</h1>");
             out.println("<h1>Parameter1 = " + param1 + "</h1>");
             out.println("<h1>Parameter2 = " + param2 + "</h1>");
             out.println("</body>");

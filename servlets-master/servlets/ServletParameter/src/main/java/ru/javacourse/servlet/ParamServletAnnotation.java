@@ -15,8 +15,8 @@ import java.io.PrintWriter;
  */
 @WebServlet(urlPatterns = "/ParamServletAnnotation", initParams = {
 
-        @WebInitParam(name = "param1", value = "value1"),
-        @WebInitParam(name = "param2", value = "value2")}
+        @WebInitParam(name = "param1", value = "value1Servlet2"),
+        @WebInitParam(name = "param2", value = "value2Servlet2")}
 
 )
 public class ParamServletAnnotation extends HttpServlet{
@@ -46,10 +46,10 @@ public class ParamServletAnnotation extends HttpServlet{
         try {
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Annotation Servlet ParamServlet</title>");
+            out.println("<title>Annotation Servlet InitParamServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Annotation Servlet ParamServlet</h1>");
+            out.println("<h1>Annotation Servlet InitParamServlet</h1>");
             out.println("<h1>Parameter1 = " + param1 + "</h1>");
             out.println("<h1>Parameter2 = " + param2 + "</h1>");
             out.println("</body>");

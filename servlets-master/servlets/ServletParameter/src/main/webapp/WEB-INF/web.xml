@@ -5,14 +5,14 @@
          version="3.0">
     <servlet>
         <servlet-name>ParamServlet</servlet-name>
-        <servlet-class>ru.javacourse.servlet.ParamServlet</servlet-class>
+        <servlet-class>ru.javacourse.servlet.InitParamServlet</servlet-class>
         <init-param>
             <param-name>parameter1</param-name>
-            <param-value>value1</param-value>
+            <param-value>value1Servlet1</param-value>
         </init-param>
         <init-param>
             <param-name>parameter2</param-name>
-            <param-value>value2</param-value>
+            <param-value>value2Servlet1</param-value>
         </init-param>
     </servlet>
 
