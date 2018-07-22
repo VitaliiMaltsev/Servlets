@@ -6,9 +6,9 @@
 </head>
 <body>
 
-    <form action="/JSPAttributesServlet" method="post">
-        <input type="text" name="name">
-        <input type="text" name="surname">
+    <form action="JSPAttributesServlet" method="post">
+      name  <input type="text" name="name"></br>
+      surname <input type="text" name="surname"></br>
         <input type="submit">
     </form>
 
