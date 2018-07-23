@@ -1,13 +1,18 @@
 package ru.javacourse.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+@XmlRootElement(name = "person")
 public class Person {
    private String firstName;
    private String lastName;
    private int age;
    private Address address;
    private List<Phone> phones;
+
+    public Person() {
+    }
 
     public Person(String firstName, String lastName, int age, Address address, List<Phone> phones) {
         this.firstName = firstName;
