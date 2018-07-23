@@ -8,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonStorage {
+    public PersonStorage() {
+    }
+
+    private List<Person> personList;
+
     public static List<Person> getPersons() {
         List<Person> personList = new ArrayList<>();
 

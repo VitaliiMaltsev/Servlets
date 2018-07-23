@@ -3,7 +3,6 @@ package ru.javacourse.model;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "person")
 public class Person {
    private String firstName;
    private String lastName;
