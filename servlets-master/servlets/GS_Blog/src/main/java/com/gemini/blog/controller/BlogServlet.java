@@ -52,7 +52,7 @@ public class BlogServlet extends HttpServlet {
             rd.forward(request, response);
 
 
-        }  else {
+        } else {
 
             List<Post> posts = categoryId == null ?
                     postDao.getAll() :
@@ -80,21 +80,41 @@ public class BlogServlet extends HttpServlet {
         String body = request.getParameter("body");
         String category = request.getParameter("category");
 
-        if (title != null && summary != null && body != null && category != null ){
-
-            Category cat =  categoryDao.getById(Integer.parseInt(category));
+        if (isValidPost(title, summary, body)) {
+            Category cat = categoryDao.getById(Integer.parseInt(category));
 
             Post post = new Post(title, summary, body, cat);
             if (id != null) {
                 post.setId(Integer.parseInt(id));
                 postDao.edit(post);
-            }else{
+            } else {
                 postDao.create(post);
             }
+            response.sendRedirect("/blog");
+        } else {
+
+            Post post = new Post();
+            if (!isNullOrEmpty(title)) post.setTitle(title);
+            if (!isNullOrEmpty(summary)) post.setTitle(summary);
+            if (!isNullOrEmpty(body)) post.setTitle(body);
+            request.setAttribute("error", "Please fill requarired fields!");
+            request.setAttribute("post", post);
+            request.setAttribute("categories", categoryDao.getAll());
+
+            getServletConfig().getServletContext().getRequestDispatcher("/jsp/newPost.jsp").forward(request, response);
         }
+    }
 
-        response.sendRedirect("/blog");
 
+    private boolean isValidPost(String title, String summary, String body) {
+        if (isNullOrEmpty(title)) return false;
+        if (isNullOrEmpty(summary)) return false;
+        if (isNullOrEmpty(body)) return false;
 
+        return true;
+    }
+
+    private boolean isNullOrEmpty(String s) {
+        return s == null || s.trim().isEmpty();
     }
 }

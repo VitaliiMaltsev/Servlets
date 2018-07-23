@@ -45,9 +45,9 @@
 
 
 
-    <!--<welcome-file-list>-->
-        <!--<welcome-file>blog</welcome-file>-->
-    <!--</welcome-file-list>-->
+    <welcome-file-list>
+        <welcome-file>blog</welcome-file>
+    </welcome-file-list>
 
 
 </web-app>

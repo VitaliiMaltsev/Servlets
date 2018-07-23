@@ -6,7 +6,9 @@
               type="javax.sql.DataSource"
               maxActive="100" maxIdle="30" maxWait="10000"
               username="root"
-              password="root"
+              password="mysql"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost/blog?useEncoding=true&amp;characterEncoding=UTF-8"/>
+              url="jdbc:mysql://localhost:3306/blog?useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useEncoding=true&amp;characterEncoding=UTF-8"/>
 </Context>
+
+        <!--jdbc:mysql://localhost:3306/fussa?useLegacyDatetimeCode=false&amp;serverTimezone=UTC-->
